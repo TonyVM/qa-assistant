@@ -3,8 +3,9 @@ from pdf_reader import extract_text_from_pdf
 from generator import generate_test_artifacts
 from utils import save_to_csv
 
-st.set_page_config(page_title="QA Assistant", layout="centered")
+st.set_page_config(page_title="QA Assistant v1.0.0", layout="centered")
 st.title("🧵 QA Test Case Assistant")
+st.caption("Version 1.0.0 - Basic OpenAI Integration")
 
 uploaded_file = st.file_uploader("Upload a requirements document (PDF)", type=["pdf"])
 
