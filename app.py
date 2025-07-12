@@ -3,8 +3,9 @@ from pdf_reader import extract_text_from_pdf
 from generator import generate_test_artifacts, get_available_models
 from utils import save_to_csv
 
-st.set_page_config(page_title="QA Assistant", layout="centered")
+st.set_page_config(page_title="QA Assistant v1.1.0", layout="centered")
 st.title("🧵 QA Test Case Assistant")
+st.caption("Version 1.1.0 - Multi-Model LangChain Integration")
 
 # Sidebar para configuraciones del modelo
 with st.sidebar:
