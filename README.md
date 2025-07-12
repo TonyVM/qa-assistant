@@ -1,17 +1,40 @@
 # 🧵 QA Test Case Assistant
 
-Una aplicación web inteligente desarrollada con Streamlit que utiliza IA (OpenAI GPT) para generar automáticamente artefactos de testing a partir de documentos de requerimientos en formato PDF.
+Una aplicación web inteligente desarrollada con Streamlit que utiliza **LangChain** e IA (OpenAI GPT y Google Gemini) para generar automáticamente artefactos de testing a partir de documentos de requerimientos en formato PDF.
 
 ## 🚀 Características
 
 - 📄 **Carga de documentos PDF**: Sube documentos de requerimientos en formato PDF
-- 🤖 **Generación automática con IA**: Utiliza OpenAI GPT-3.5-turbo para generar contenido de calidad
+- 🤖 **Múltiples proveedores de IA**: Soporte para OpenAI GPT y Google Gemini
+- 🔑 **API Keys integradas**: Ingresa tus claves API directamente en la interfaz
+- 📚 **Tutoriales incluidos**: Guías paso a paso para obtener API keys
+- ⚙️ **Selección de modelos**: Elige entre diferentes modelos según tus necesidades
+- 🔗 **Powered by LangChain**: Arquitectura robusta y escalable
+- 🧹 **Respuestas limpias**: Post-procesamiento automático que elimina texto introductorio innecesario
+- 📏 **Manejo inteligente de documentos**: Truncado que preserva párrafos completos
 - 📋 **Múltiples tipos de artefactos**:
   - **User Stories**: Historias de usuario en formato estándar
   - **Test Scenarios**: Escenarios de prueba detallados
   - **Test Cases**: Casos de prueba completos con pasos y resultados esperados
 - 💾 **Exportación a CSV**: Descarga los resultados generados en formato CSV
 - 🎨 **Interfaz intuitiva**: UI moderna y fácil de usar con Streamlit
+- 🔒 **Seguridad**: Las API keys solo se usan durante la sesión
+
+## 🤖 Modelos Soportados y Límites
+
+### OpenAI
+- **GPT-3.5-turbo**: ~12,000 caracteres (rápido y eficiente)
+- **GPT-4**: ~24,000 caracteres (mayor precisión)
+- **GPT-4-turbo-preview**: ~100,000 caracteres (documentos grandes)
+
+### Google Gemini
+- **Gemini-pro**: ~20,000 caracteres (modelo principal de Google)
+- **Gemini-pro-vision**: ~20,000 caracteres (con capacidades visuales)
+
+### Manejo Inteligente de Documentos
+- **Truncado inteligente**: Preserva párrafos completos
+- **Límites dinámicos**: Ajustados según el modelo seleccionado
+- **Feedback visual**: Información clara sobre el procesamiento del documento
 
 ## 📁 Estructura del Proyecto
 
@@ -32,7 +55,9 @@ qa_assistant_app/
 ### Prerrequisitos
 
 - Python 3.8 o superior
-- Clave API de OpenAI
+- **Una cuenta en al menos uno de estos proveedores:**
+  - [OpenAI Platform](https://platform.openai.com/) (para modelos GPT)
+  - [Google AI Studio](https://aistudio.google.com/) (para modelos Gemini)
 
 ### Pasos de instalación
 
@@ -67,27 +92,9 @@ qa_assistant_app/
    pip install -r requirements.txt
    ```
 
-4. **Configura tu clave API de OpenAI:**
-
-   **En macOS/Linux:**
-   ```bash
-   export OPENAI_API_KEY="tu_clave_api_aquí"
-   ```
-
-   **En Windows (PowerShell):**
-   ```powershell
-   $env:OPENAI_API_KEY="tu_clave_api_aquí"
-   ```
-
-   **En Windows (Command Prompt):**
-   ```cmd
-   set OPENAI_API_KEY=tu_clave_api_aquí
-   ```
+4. **¡Listo para usar!** 
    
-   O crea un archivo `.env` en el directorio raíz:
-   ```
-   OPENAI_API_KEY=tu_clave_api_aquí
-   ```
+   Las API keys se configuran directamente en la interfaz de la aplicación con tutoriales incluidos.
 
 ## 🚀 Uso
 
@@ -98,16 +105,39 @@ qa_assistant_app/
 
 2. **Abre tu navegador** en `http://localhost:8501`
 
-3. **Sube un documento PDF** con los requerimientos
+3. **Configura tu API key** en la barra lateral:
+   - Selecciona el proveedor (OpenAI o Gemini)  
+   - Haz clic en "📚 How to get [Provider] API Key" para ver el tutorial
+   - Obtén tu API key siguiendo los pasos del tutorial
+   - Pégala en el campo correspondiente
 
-4. **Selecciona el tipo de artefacto** que deseas generar:
+4. **Selecciona el modelo** específico según tu documento
+
+5. **Sube un documento PDF** con los requerimientos
+
+6. **Selecciona el tipo de artefacto** que deseas generar:
    - User Stories
    - Test Scenarios  
    - Test Cases
 
-5. **Haz clic en "Generate"** y espera a que la IA procese el documento
+7. **Haz clic en "🚀 Generate"** y espera a que la IA procese el documento
 
-6. **Descarga los resultados** en formato CSV
+8. **Revisa los resultados** y **descarga en formato CSV** si están satisfactorios
+
+### 🔑 Cómo Obtener API Keys
+
+#### OpenAI API Key:
+1. Ve a [OpenAI Platform](https://platform.openai.com/)
+2. Haz clic en el ícono de configuración (⚙️) en la esquina superior derecha
+3. En el menú lateral izquierdo, haz clic en "API keys"
+4. Presiona el botón "Create new secret key"
+5. Copia tu API key (empieza con `sk-`)
+
+#### Google Gemini API Key:
+1. Ve a [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. Haz clic en el botón "Create API key"
+3. Selecciona tu proyecto de Google Cloud o crea uno nuevo
+4. Copia tu API key (empieza con `AIza`)
 
 ## 📋 Tipos de Artefactos Generados
 
@@ -130,10 +160,12 @@ Genera casos de prueba completos con:
 ## 🛡️ Tecnologías Utilizadas
 
 - **[Streamlit](https://streamlit.io/)**: Framework para aplicaciones web en Python
-- **[OpenAI](https://openai.com/)**: API de inteligencia artificial para generación de contenido
+- **[LangChain](https://langchain.com/)**: Framework para aplicaciones con LLM y orquestación de IA
+- **[OpenAI](https://openai.com/)**: API de inteligencia artificial (GPT-3.5, GPT-4)
+- **[Google Gemini](https://ai.google.dev/)**: Modelos de IA de Google (Gemini Pro)
 - **[PyMuPDF](https://pymupdf.readthedocs.io/)**: Extracción de texto de documentos PDF
 - **[Pandas](https://pandas.pydata.org/)**: Manipulación y análisis de datos
-- **[LangChain](https://langchain.com/)**: Framework para aplicaciones con LLM
+- **[python-dotenv](https://pypi.org/project/python-dotenv/)**: Gestión de variables de entorno
 
 ## 📝 Ejemplo de Uso
 
@@ -141,13 +173,26 @@ Genera casos de prueba completos con:
    ```
    El sistema debe permitir a los usuarios registrarse con email y contraseña.
    Los usuarios deben poder recuperar su contraseña mediante email.
+   El sistema debe validar la fortaleza de las contraseñas.
+   Los usuarios deben poder actualizar su perfil personal.
+   El sistema debe enviar notificaciones por email para eventos importantes.
    ```
 
-2. Selecciona "User Stories" y obtendrás:
+2. **Selecciona el modelo apropiado**:
+   - Para documentos pequeños (< 12K caracteres): GPT-3.5-turbo
+   - Para documentos medianos (< 24K caracteres): GPT-4 o Gemini-pro  
+   - Para documentos grandes (< 100K caracteres): GPT-4-turbo-preview
+
+3. Selecciona "User Stories" y obtendrás **únicamente** el contenido útil:
    ```
    1. As a new user, I want to register with my email and password so that I can access the system.
    2. As a registered user, I want to recover my password via email so that I can regain access to my account.
+   3. As a user, I want the system to validate my password strength so that my account is secure.
+   4. As a registered user, I want to update my personal profile so that my information stays current.
+   5. As a user, I want to receive email notifications for important events so that I stay informed.
    ```
+
+   **Nota**: La aplicación automáticamente elimina texto introductorio como "Here are the user stories extracted from..." para entregar solo el contenido relevante.
 
 ## 🤝 Contribuciones
 
@@ -169,11 +214,32 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 | Variable | Descripción | Requerida |
 |----------|-------------|-----------|
-| `OPENAI_API_KEY` | Tu clave API de OpenAI | Sí |
+| `OPENAI_API_KEY` | Tu clave API de OpenAI | Solo para modelos OpenAI |
+| `GOOGLE_API_KEY` | Tu clave API de Google | Solo para modelos Gemini |
+
+**Nota**: Solo necesitas configurar la API key del proveedor que planeas usar.
+
+### Obtener API Keys
+
+**OpenAI:**
+1. Ve a [OpenAI API Keys](https://platform.openai.com/api-keys)
+2. Crea una nueva clave API
+3. Configura billing si es necesario
+
+**Google Gemini:**
+1. Ve a [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Crea una nueva API key
+3. Habilita la Gemini API
 
 ### Personalización de Prompts
 
 Puedes modificar los prompts en `prompts.py` para adaptar la generación a tus necesidades específicas.
+
+### Selección de Modelos
+
+La aplicación permite elegir entre diferentes modelos:
+- **Para desarrollo/pruebas**: GPT-3.5-turbo o Gemini-pro
+- **Para producción**: GPT-4 (mayor precisión, mayor costo)
 
 ## 🐛 Reportar Problemas
 
