@@ -121,6 +121,9 @@ celerybeat.pid
 
 # Environments
 .env
+.env.local
+.env.production
+.env.staging
 .venv
 env/
 venv/
@@ -189,6 +192,11 @@ $RECYCLE.BIN/
 outputs/*.csv
 outputs/*.xlsx
 outputs/*.json
+
+# Test files
+test_*.py
+*_test.py
+tests/
 
 # Temporary files
 *.tmp
