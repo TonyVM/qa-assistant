@@ -132,7 +132,7 @@ if uploaded_file:
 
     action = st.radio(
         "What do you want to generate?",
-        ["User Stories", "Test Scenarios", "Test Cases"],
+        ["User Stories", "Gherkin User Stories", "Test Scenarios", "Test Cases"],
         help="Select the type of testing artifact to generate",
     )
 
@@ -196,7 +196,25 @@ with st.expander("❓ Need Help?"):
     5. **Select the artifact type** you want to generate
     6. **Click Generate** and wait for the results
     
-    ### 📏 Document Size Guidelines
+    ### � Available Artifact Types
+    
+    - **User Stories**: Traditional user stories in "As a... I want... So that..." format
+    - **Gherkin User Stories**: BDD-style user stories with Given/When/Then scenarios
+    - **Test Scenarios**: High-level test scenarios covering different cases
+    - **Test Cases**: Detailed test cases with steps and expected results
+    
+    ### 🥒 What is Gherkin?
+    
+    Gherkin is a business-readable language for BDD (Behavior Driven Development):
+    - **Feature**: Describes the software feature
+    - **Scenario**: Specific test case
+    - **Given**: Initial context/preconditions
+    - **When**: Action or event
+    - **Then**: Expected outcome
+    
+    Perfect for teams using Cucumber, Behave, or SpecFlow!
+    
+    ### �📏 Document Size Guidelines
     
     - **Small documents** (< 12K chars): Use GPT-3.5-turbo or Gemini-pro
     - **Medium documents** (12K-24K chars): Use GPT-4 or Gemini-pro

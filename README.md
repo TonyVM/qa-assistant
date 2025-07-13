@@ -14,6 +14,7 @@ Una aplicación web inteligente desarrollada con Streamlit que utiliza **LangCha
 - 📏 **Manejo inteligente de documentos**: Truncado que preserva párrafos completos
 - 📋 **Múltiples tipos de artefactos**:
   - **User Stories**: Historias de usuario en formato estándar
+  - **Gherkin User Stories**: Historias de usuario en formato BDD con Given/When/Then 🆕
   - **Test Scenarios**: Escenarios de prueba detallados
   - **Test Cases**: Casos de prueba completos con pasos y resultados esperados
 - 💾 **Exportación a CSV**: Descarga los resultados generados en formato CSV
@@ -117,6 +118,7 @@ qa_assistant_app/
 
 6. **Selecciona el tipo de artefacto** que deseas generar:
    - User Stories
+   - Gherkin User Stories 🆕
    - Test Scenarios  
    - Test Cases
 
@@ -146,6 +148,36 @@ Genera historias de usuario siguiendo el formato estándar:
 ```
 As a <role>, I want to <goal> so that <benefit>
 ```
+
+### Gherkin User Stories 🆕
+Genera historias de usuario en formato BDD (Behavior Driven Development) usando Gherkin:
+```gherkin
+Feature: User Authentication
+  As a customer
+  I want to log into my account
+  So that I can access my personal information
+
+  Scenario: Successful login with valid credentials
+    Given I am on the login page
+    When I enter my valid email and password
+    And I click the login button
+    Then I should be redirected to my dashboard
+    And I should see a welcome message
+
+  Scenario: Failed login with invalid credentials
+    Given I am on the login page
+    When I enter an invalid email or password
+    And I click the login button
+    Then I should see an error message
+    And I should remain on the login page
+```
+
+**Beneficios del formato Gherkin:**
+- 📖 Legible para equipos técnicos y no técnicos
+- 🔄 Ejecutable con herramientas como Cucumber, Behave, SpecFlow
+- 📚 Documentación viva que se mantiene actualizada
+- 🤝 Facilita la colaboración entre desarrolladores, testers y analistas de negocio
+- 🎯 Enfoque en el comportamiento del usuario (BDD)
 
 ### Test Scenarios
 Crea múltiples escenarios de prueba detallados para cada requerimiento, incluyendo casos positivos, negativos y edge cases.

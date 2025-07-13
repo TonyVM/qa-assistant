@@ -1,6 +1,27 @@
-# QA Assistant - Nueva Versión con LangChain
+# QA Assistant - Changelog
 
-## 🚀 Mejoras Implementadas
+## 🥒 Version 1.2.0 - Gherkin User Stories (En desarrollo)
+**Fecha**: July 13, 2025
+
+### ✨ Nuevas Características
+
+**🆕 Gherkin User Stories Support**
+- **Formato BDD**: Generación de historias de usuario en formato Gherkin
+- **Sintaxis completa**: Soporte para Feature, Scenario, Given, When, Then, And, But
+- **Casos de uso BDD**: Perfecto para equipos que usan Cucumber, Behave, SpecFlow
+- **Exportación mejorada**: CSV especializado para features y scenarios
+- **Documentación**: Guía completa sobre Gherkin y BDD
+
+**� Mejoras Técnicas**
+- **Parser avanzado**: Análisis inteligente de features y scenarios para CSV
+- **Prompts optimizados**: Generación específica para formato Gherkin
+- **Validación**: Scripts de prueba para validar formato Gherkin
+- **Documentación viva**: Los scenarios sirven como documentación ejecutable
+
+---
+
+## 🚀 Version 1.1.0 - LangChain Multi-Model Integration
+**Fecha**: July 11, 2025
 
 ### ✨ Nuevas Características
 

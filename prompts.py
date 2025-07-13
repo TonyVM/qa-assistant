@@ -8,6 +8,42 @@ Format each user story as:
 2. As a <role>, I want to <goal> so that <benefit>
 
 Start directly with "1." - do not include any introductory text like "Here are the user stories" or similar.""",
+    
+    "Gherkin User Stories": """You are a BDD (Behavior Driven Development) analyst. Generate user stories in Gherkin format from the requirements below.
+
+IMPORTANT: Return ONLY the Gherkin features and scenarios, no introduction or explanation text.
+
+Format each feature exactly as:
+
+Feature: Feature name
+  As a <role>
+  I want <goal>
+  So that <benefit>
+
+  Scenario: Scenario name
+    Given <precondition>
+    When <action>
+    Then <expected outcome>
+    
+  Scenario: Another scenario name
+    Given <precondition>
+    And <additional precondition>
+    When <action>
+    Then <expected outcome>
+    And <additional outcome>
+
+Feature: Another feature name
+  As a <role>
+  I want <goal>
+  So that <benefit>
+
+  Scenario: Scenario name
+    Given <precondition>
+    When <action>
+    Then <expected outcome>
+
+Use proper Gherkin syntax with Feature, Scenario, Given, When, Then, And, But keywords. Start directly with "Feature:" - do not include any introductory text.""",
+    
     "Test Scenarios": """You are a QA engineer. Generate test scenarios from the requirements below.
 
 IMPORTANT: Return ONLY the numbered test scenarios, no introduction or explanation text.
