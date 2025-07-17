@@ -1,5 +1,30 @@
 # 🧵 QA Test Case Assistant
 
+An intelligent web application built with Streamlit that uses **LangChain** and AI (OpenAI GPT and Google Gemini) to automatically generate testing artifacts from PDF requirement documents.
+
+## 🚀 Features
+
+- 📄 **PDF Document Upload**: Upload requirement documents in PDF format
+- 🤖 **Multiple AI Providers**: Support for OpenAI GPT and Google Gemini
+- 🔑 **Integrated API Keys**: Enter your API keys directly in the interface
+- 📚 **Built-in Tutorials**: Step-by-step guides to get API keys
+- ⚙️ **Model Selection**: Choose between different models based on your needs
+- 🔗 **Powered by LangChain**: Robust and scalable architecture
+- 🧹 **Clean Responses**: Automatic post-processing that removes unnecessary introductory text
+- 📏 **Intelligent Document Handling**: Smart truncation that preserves complete paragraphs
+- 📋 **Multiple Artifact Types**:
+  - **User Stories**: User stories in standard format
+  - **Gherkin User Stories**: BDD-style user stories with Given/When/Then 🆕
+  - **Test Scenarios**: Detailed test scenarios
+  - **Test Cases**: Complete test cases with steps and expected results
+- 💾 **CSV Export**: Download generated results in CSV format
+- 🎨 **Intuitive Interface**: Modern and easy-to-use UI with Streamlit
+- 🔒 **Security**: API keys are only used during the session
+
+---
+
+# 🧵 QA Test Case Assistant (Español)
+
 Una aplicación web inteligente desarrollada con Streamlit que utiliza **LangChain** e IA (OpenAI GPT y Google Gemini) para generar automáticamente artefactos de testing a partir de documentos de requerimientos en formato PDF.
 
 ## 🚀 Características
@@ -21,6 +46,24 @@ Una aplicación web inteligente desarrollada con Streamlit que utiliza **LangCha
 - 🎨 **Interfaz intuitiva**: UI moderna y fácil de usar con Streamlit
 - 🔒 **Seguridad**: Las API keys solo se usan durante la sesión
 
+## 🤖 Supported Models and Limits
+
+### OpenAI
+- **GPT-3.5-turbo**: ~12,000 characters (fast and efficient)
+- **GPT-4**: ~24,000 characters (higher accuracy)
+- **GPT-4-turbo-preview**: ~100,000 characters (large documents)
+
+### Google Gemini
+- **Gemini-pro**: ~20,000 characters (Google's main model)
+- **Gemini-pro-vision**: ~20,000 characters (with visual capabilities)
+
+### Intelligent Document Handling
+- **Smart truncation**: Preserves complete paragraphs
+- **Dynamic limits**: Adjusted according to selected model
+- **Visual feedback**: Clear information about document processing
+
+---
+
 ## 🤖 Modelos Soportados y Límites
 
 ### OpenAI
@@ -37,12 +80,28 @@ Una aplicación web inteligente desarrollada con Streamlit que utiliza **LangCha
 - **Límites dinámicos**: Ajustados según el modelo seleccionado
 - **Feedback visual**: Información clara sobre el procesamiento del documento
 
+## 📁 Project Structure
+
+```
+qa_assistant_app/
+├── app.py                 # Main Streamlit application
+├── generator.py           # Artifact generator using AI
+├── pdf_reader.py          # PDF text extractor
+├── prompts.py            # Optimized prompts for each testing type
+├── utils.py              # CSV file handling utilities
+├── requirements.txt      # Project dependencies
+├── outputs/              # Directory for generated CSV files
+└── README.md            # This file
+```
+
+---
+
 ## 📁 Estructura del Proyecto
 
 ```
 qa_assistant_app/
 ├── app.py                 # Aplicación principal de Streamlit
-├── generator.py           # Generador de artefactos usando OpenAI
+├── generator.py           # Generador de artefactos usando IA
 ├── pdf_reader.py          # Extractor de texto de archivos PDF
 ├── prompts.py            # Prompts optimizados para cada tipo de testing
 ├── utils.py              # Utilidades para manejo de archivos CSV
@@ -50,6 +109,54 @@ qa_assistant_app/
 ├── outputs/              # Directorio para archivos CSV generados
 └── README.md            # Este archivo
 ```
+
+## 🛠️ Installation
+
+### Prerequisites
+
+- Python 3.8 or higher
+- **An account with at least one of these providers:**
+  - [OpenAI Platform](https://platform.openai.com/) (for GPT models)
+  - [Google AI Studio](https://aistudio.google.com/) (for Gemini models)
+
+### Installation Steps
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd qa_assistant_app
+   ```
+
+2. **Create a virtual environment (recommended):**
+
+   **On macOS/Linux:**
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+   **On Windows (PowerShell):**
+   ```powershell
+   python -m venv .venv
+   .venv\Scripts\Activate.ps1
+   ```
+
+   **On Windows (Command Prompt):**
+   ```cmd
+   python -m venv .venv
+   .venv\Scripts\activate.bat
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Ready to use!** 
+   
+   API keys are configured directly in the application interface with included tutorials.
+
+---
 
 ## 🛠️ Instalación
 
@@ -97,6 +204,52 @@ qa_assistant_app/
    
    Las API keys se configuran directamente en la interfaz de la aplicación con tutoriales incluidos.
 
+## 🚀 Usage
+
+1. **Run the application:**
+   ```bash
+   streamlit run app.py
+   ```
+
+2. **Open your browser** at `http://localhost:8501`
+
+3. **Configure your API key** in the sidebar:
+   - Select the provider (OpenAI or Gemini)  
+   - Click on "📚 How to get [Provider] API Key" to see the tutorial
+   - Get your API key following the tutorial steps
+   - Paste it in the corresponding field
+
+4. **Select the specific model** according to your document
+
+5. **Upload a PDF document** with the requirements
+
+6. **Select the artifact type** you want to generate:
+   - User Stories
+   - Gherkin User Stories 🆕
+   - Test Scenarios  
+   - Test Cases
+
+7. **Click "🚀 Generate"** and wait for the AI to process the document
+
+8. **Review the results** and **download in CSV format** if satisfactory
+
+### 🔑 How to Get API Keys
+
+#### OpenAI API Key:
+1. Go to [OpenAI Platform](https://platform.openai.com/)
+2. Click on the settings icon (⚙️) in the top right corner
+3. In the left sidebar menu, click on "API keys"
+4. Click the "Create new secret key" button
+5. Copy your API key (starts with `sk-`)
+
+#### Google Gemini API Key:
+1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. Click the "Create API key" button
+3. Select your Google Cloud project or create a new one
+4. Copy your API key (starts with `AIza`)
+
+---
+
 ## 🚀 Uso
 
 1. **Ejecuta la aplicación:**
@@ -140,6 +293,56 @@ qa_assistant_app/
 2. Haz clic en el botón "Create API key"
 3. Selecciona tu proyecto de Google Cloud o crea uno nuevo
 4. Copia tu API key (empieza con `AIza`)
+
+## 📋 Generated Artifact Types
+
+### User Stories
+Generates user stories following the standard format:
+```
+As a <role>, I want to <goal> so that <benefit>
+```
+
+### Gherkin User Stories 🆕
+Generates user stories in BDD (Behavior Driven Development) format using Gherkin:
+```gherkin
+Feature: User Authentication
+  As a customer
+  I want to log into my account
+  So that I can access my personal information
+
+  Scenario: Successful login with valid credentials
+    Given I am on the login page
+    When I enter my valid email and password
+    And I click the login button
+    Then I should be redirected to my dashboard
+    And I should see a welcome message
+
+  Scenario: Failed login with invalid credentials
+    Given I am on the login page
+    When I enter an invalid email or password
+    And I click the login button
+    Then I should see an error message
+    And I should remain on the login page
+```
+
+**Benefits of Gherkin format:**
+- 📖 Readable for both technical and non-technical teams
+- 🔄 Executable with tools like Cucumber, Behave, SpecFlow
+- 📚 Living documentation that stays updated
+- 🤝 Facilitates collaboration between developers, testers and business analysts
+- 🎯 Focus on user behavior (BDD)
+
+### Test Scenarios
+Creates multiple detailed test scenarios for each requirement, including positive, negative and edge cases.
+
+### Test Cases
+Generates complete test cases with:
+- Unique ID
+- Descriptive title
+- Detailed steps
+- Expected results
+
+---
 
 ## 📋 Tipos de Artefactos Generados
 
@@ -189,6 +392,18 @@ Genera casos de prueba completos con:
 - Pasos detallados
 - Resultados esperados
 
+## 🛡️ Technologies Used
+
+- **[Streamlit](https://streamlit.io/)**: Python web application framework
+- **[LangChain](https://langchain.com/)**: Framework for LLM applications and AI orchestration
+- **[OpenAI](https://openai.com/)**: Artificial intelligence API (GPT-3.5, GPT-4)
+- **[Google Gemini](https://ai.google.dev/)**: Google's AI models (Gemini Pro)
+- **[PyMuPDF](https://pymupdf.readthedocs.io/)**: PDF text extraction
+- **[Pandas](https://pandas.pydata.org/)**: Data manipulation and analysis
+- **[python-dotenv](https://pypi.org/project/python-dotenv/)**: Environment variable management
+
+---
+
 ## 🛡️ Tecnologías Utilizadas
 
 - **[Streamlit](https://streamlit.io/)**: Framework para aplicaciones web en Python
@@ -197,7 +412,34 @@ Genera casos de prueba completos con:
 - **[Google Gemini](https://ai.google.dev/)**: Modelos de IA de Google (Gemini Pro)
 - **[PyMuPDF](https://pymupdf.readthedocs.io/)**: Extracción de texto de documentos PDF
 - **[Pandas](https://pandas.pydata.org/)**: Manipulación y análisis de datos
-- **[python-dotenv](https://pypi.org/project/python-dotenv/)**: Gestión de variables de entorno
+## 📝 Usage Example
+
+1. Upload a PDF with requirements like:
+   ```
+   The system must allow users to register with email and password.
+   Users must be able to recover their password via email.
+   The system must validate password strength.
+   Users must be able to update their personal profile.
+   The system must send email notifications for important events.
+   ```
+
+2. **Select the appropriate model**:
+   - For small documents (< 12K characters): GPT-3.5-turbo
+   - For medium documents (< 24K characters): GPT-4 or Gemini-pro  
+   - For large documents (< 100K characters): GPT-4-turbo-preview
+
+3. Select "User Stories" and you'll get **only** the useful content:
+   ```
+   1. As a new user, I want to register with my email and password so that I can access the system.
+   2. As a registered user, I want to recover my password via email so that I can regain access to my account.
+   3. As a user, I want the system to validate my password strength so that my account is secure.
+   4. As a registered user, I want to update my personal profile so that my information stays current.
+   5. As a user, I want to receive email notifications for important events so that I stay informed.
+   ```
+
+   **Note**: The application automatically removes introductory text like "Here are the user stories extracted from..." to deliver only relevant content.
+
+---
 
 ## 📝 Ejemplo de Uso
 
@@ -224,9 +466,76 @@ Genera casos de prueba completos con:
    5. As a user, I want to receive email notifications for important events so that I stay informed.
    ```
 
-   **Nota**: La aplicación automáticamente elimina texto introductorio como "Here are the user stories extracted from..." para entregar solo el contenido relevante.
+## 🤝 Contributing
 
-## 🤝 Contribuciones
+Contributions are welcome! Please:
+
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## 🔧 Additional Configuration
+
+### Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `OPENAI_API_KEY` | Your OpenAI API key | Only for OpenAI models |
+| `GOOGLE_API_KEY` | Your Google API key | Only for Gemini models |
+
+**Note**: You only need to configure the API key for the provider you plan to use.
+
+### Getting API Keys
+
+**OpenAI:**
+1. Go to [OpenAI API Keys](https://platform.openai.com/api-keys)
+2. Create a new API key
+3. Set up billing if necessary
+
+**Google Gemini:**
+1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Create a new API key
+3. Enable the Gemini API
+
+### Prompt Customization
+
+You can modify the prompts in `prompts.py` to adapt the generation to your specific needs.
+
+### Model Selection
+
+The application allows choosing between different models:
+- **For development/testing**: GPT-3.5-turbo or Gemini-pro
+- **For production**: GPT-4 (higher accuracy, higher cost)
+
+## 🐛 Bug Reports
+
+If you encounter any issues, please open a GitHub issue with:
+- Problem description
+- Steps to reproduce
+- Screenshots (if applicable)
+- Python and dependency versions
+
+## 👨‍💻 Author
+
+Developed with ❤️ to facilitate the work of QA teams.
+
+---
+
+⭐ If you like this project, give it a star on GitHub!
+
+---
+
+# 🧵 QA Test Case Assistant (Versión en Español)
+
+Una aplicación web inteligente desarrollada con Streamlit que utiliza IA (OpenAI GPT y Google Gemini) para generar automáticamente artefactos de testing a partir de documentos de requerimientos en formato PDF.
+
+## � Contribuciones
 
 Las contribuciones son bienvenidas. Por favor:
 
@@ -273,7 +582,7 @@ La aplicación permite elegir entre diferentes modelos:
 - **Para desarrollo/pruebas**: GPT-3.5-turbo o Gemini-pro
 - **Para producción**: GPT-4 (mayor precisión, mayor costo)
 
-## 🐛 Reportar Problemas
+## � Reportar Problemas
 
 Si encuentras algún problema, por favor abre un issue en GitHub con:
 - Descripción del problema
@@ -288,173 +597,6 @@ Desarrollado con ❤️ para facilitar el trabajo de los equipos de QA.
 ---
 
 ⭐ Si te gusta este proyecto, ¡dale una estrella en GitHub!
-
----
-
-# 🧵 QA Test Case Assistant (English Version)
-
-An intelligent web application built with Streamlit that uses AI (OpenAI GPT) to automatically generate testing artifacts from PDF requirement documents.
-
-## 🚀 Features
-
-- 📄 **PDF Document Upload**: Upload requirement documents in PDF format
-- 🤖 **AI-Powered Generation**: Uses OpenAI GPT-3.5-turbo to generate quality content
-- 📋 **Multiple Artifact Types**:
-  - **User Stories**: User stories in standard format
-  - **Test Scenarios**: Detailed test scenarios
-  - **Test Cases**: Complete test cases with steps and expected results
-- 💾 **CSV Export**: Download generated results in CSV format
-- 🎨 **Intuitive Interface**: Modern and easy-to-use UI with Streamlit
-
-## 📁 Project Structure
-
-```
-qa_assistant_app/
-├── app.py                 # Main Streamlit application
-├── generator.py           # Artifact generator using OpenAI
-├── pdf_reader.py          # PDF text extractor
-├── prompts.py            # Optimized prompts for each testing type
-├── utils.py              # CSV file handling utilities
-├── requirements.txt      # Project dependencies
-├── outputs/              # Directory for generated CSV files
-└── README.md            # This file
-```
-
-## 🛠️ Installation
-
-### Prerequisites
-
-- Python 3.8 or higher
-- OpenAI API key
-
-### Installation Steps
-
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd qa_assistant_app
-   ```
-
-2. **Create a virtual environment (recommended):**
-
-   **On macOS/Linux:**
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   ```
-
-   **On Windows (PowerShell):**
-   ```powershell
-   python -m venv .venv
-   .venv\Scripts\Activate.ps1
-   ```
-
-   **On Windows (Command Prompt):**
-   ```cmd
-   python -m venv .venv
-   .venv\Scripts\activate.bat
-   ```
-
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configure your OpenAI API key:**
-
-   **On macOS/Linux:**
-   ```bash
-   export OPENAI_API_KEY="your_api_key_here"
-   ```
-
-   **On Windows (PowerShell):**
-   ```powershell
-   $env:OPENAI_API_KEY="your_api_key_here"
-   ```
-
-   **On Windows (Command Prompt):**
-   ```cmd
-   set OPENAI_API_KEY=your_api_key_here
-   ```
-   
-   Or create a `.env` file in the root directory:
-   ```
-   OPENAI_API_KEY=your_api_key_here
-   ```
-
-## 🚀 Usage
-
-1. **Run the application:**
-   ```bash
-   streamlit run app.py
-   ```
-
-2. **Open your browser** at `http://localhost:8501`
-
-3. **Upload a PDF document** with requirements
-
-4. **Select the artifact type** you want to generate:
-   - User Stories
-   - Test Scenarios  
-   - Test Cases
-
-5. **Click "Generate"** and wait for the AI to process the document
-
-6. **Download the results** in CSV format
-
-## 📋 Generated Artifact Types
-
-### User Stories
-Generates user stories following the standard format:
-```
-As a <role>, I want to <goal> so that <benefit>
-```
-
-### Test Scenarios
-Creates multiple detailed test scenarios for each requirement, including positive, negative, and edge cases.
-
-### Test Cases
-Generates complete test cases with:
-- Unique ID
-- Descriptive title
-- Detailed steps
-- Expected results
-
-## 🛡️ Technologies Used
-
-- **[Streamlit](https://streamlit.io/)**: Python web application framework
-- **[OpenAI](https://openai.com/)**: AI API for content generation
-- **[PyMuPDF](https://pymupdf.readthedocs.io/)**: PDF text extraction
-- **[Pandas](https://pandas.pydata.org/)**: Data manipulation and analysis
-- **[LangChain](https://langchain.com/)**: Framework for LLM applications
-
-## 📝 Usage Example
-
-1. Upload a PDF with requirements like:
-   ```
-   The system must allow users to register with email and password.
-   Users must be able to recover their password via email.
-   ```
-
-2. Select "User Stories" and you'll get:
-   ```
-   1. As a new user, I want to register with my email and password so that I can access the system.
-   2. As a registered user, I want to recover my password via email so that I can regain access to my account.
-   ```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the project
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ## 🔧 Additional Configuration
 

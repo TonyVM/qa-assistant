@@ -1,27 +1,75 @@
 # QA Assistant - Changelog
 
-## 🥒 Version 1.2.0 - Gherkin User Stories (En desarrollo)
-**Fecha**: July 13, 2025
+## 🥒 Version 1.2.0 - Gherkin User Stories (In Development)
+**Date**: July 13, 2025
+
+### ✨ New Features
+
+**🆕 Gherkin User Stories Support**
+- **BDD Format**: Generation of user stories in Gherkin format
+- **Complete Syntax**: Support for Feature, Scenario, Given, When, Then, And, But
+- **BDD Use Cases**: Perfect for teams using Cucumber, Behave, SpecFlow
+- **Enhanced Export**: Specialized CSV for features and scenarios
+- **Documentation**: Complete guide on Gherkin and BDD
+
+**🔧 Technical Improvements**
+- **Advanced Parser**: Intelligent analysis of features and scenarios for CSV
+- **Optimized Prompts**: Specific generation for Gherkin format
+- **Validation**: Test scripts to validate Gherkin format
+- **Living Documentation**: Scenarios serve as executable documentation
+
+---
+
+## 🥒 Versión 1.2.0 - Gherkin User Stories (En desarrollo)
+**Fecha**: 13 de julio, 2025
 
 ### ✨ Nuevas Características
 
-**🆕 Gherkin User Stories Support**
+**🆕 Soporte para Gherkin User Stories**
 - **Formato BDD**: Generación de historias de usuario en formato Gherkin
 - **Sintaxis completa**: Soporte para Feature, Scenario, Given, When, Then, And, But
 - **Casos de uso BDD**: Perfecto para equipos que usan Cucumber, Behave, SpecFlow
 - **Exportación mejorada**: CSV especializado para features y scenarios
 - **Documentación**: Guía completa sobre Gherkin y BDD
 
-**� Mejoras Técnicas**
+**🔧 Mejoras Técnicas**
 - **Parser avanzado**: Análisis inteligente de features y scenarios para CSV
 - **Prompts optimizados**: Generación específica para formato Gherkin
 - **Validación**: Scripts de prueba para validar formato Gherkin
 - **Documentación viva**: Los scenarios sirven como documentación ejecutable
 
+## 🚀 Version 1.1.0 - LangChain Multi-Model Integration
+**Date**: July 11, 2025
+
+### ✨ New Features
+
+1. **🔑 Integrated API Keys in Interface**
+   - **Direct Input**: Users can enter their API keys in the application
+   - **Included Tutorials**: Step-by-step guides to get API keys
+   - **Real-time Validation**: Key format verification
+   - **Security**: Keys are only used during the session
+   - **Flexibility**: Support for environment variables or manual input
+
+2. **📚 Interactive Tutorials**
+   - **OpenAI**: Complete guide from platform.openai.com to creating the key
+   - **Google Gemini**: Instructions for aistudio.google.com
+   - **Visual Captures**: Direct links to correct pages
+   - **Visual Validation**: Immediate feedback on key format
+
+3. **Multiple AI Providers**
+   - Support for OpenAI (GPT-3.5, GPT-4, GPT-4-turbo)
+   - Support for Google Gemini (Gemini-pro, Gemini-2.5-flash)
+   - Dynamic selection of provider and model
+
+4. **Enhanced Architecture with LangChain**
+   - Robust and scalable implementation
+   - Better error handling
+   - Modular architecture for easy extension
+
 ---
 
-## 🚀 Version 1.1.0 - LangChain Multi-Model Integration
-**Fecha**: July 11, 2025
+## 🚀 Versión 1.1.0 - LangChain Multi-Model Integration
+**Fecha**: 11 de julio, 2025
 
 ### ✨ Nuevas Características
 

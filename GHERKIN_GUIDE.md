@@ -1,4 +1,4 @@
-# Gherkin User Stories Examples
+# Gherkin User Stories Guide
 
 ## What is Gherkin?
 
@@ -12,6 +12,23 @@ Gherkin is a domain-specific language that lets you describe software behavior w
 - **When**: Describes the action/event
 - **Then**: Describes the expected outcome
 - **And/But**: Adds additional conditions
+
+---
+
+# Guía de Gherkin User Stories
+
+## ¿Qué es Gherkin?
+
+Gherkin es un lenguaje específico de dominio que te permite describir el comportamiento del software sin detallar cómo se implementa esa funcionalidad. Está escrito en un estilo de lenguaje natural que pueden leer y entender tanto miembros técnicos como no técnicos del equipo.
+
+## Sintaxis Básica de Gherkin
+
+- **Feature**: Describe la funcionalidad del software que se está probando
+- **Scenario**: Describe un caso de prueba específico
+- **Given**: Describe el contexto inicial
+- **When**: Describe la acción/evento
+- **Then**: Describe el resultado esperado
+- **And/But**: Añade condiciones adicionales
 
 ## Example 1: E-commerce Login
 
@@ -55,6 +72,52 @@ Feature: Shopping Cart Management
     When I remove 1 item from the cart
     Then the cart should contain 1 item
     And the cart total should be updated accordingly
+```
+
+---
+
+## Ejemplo 1: Login de E-commerce
+
+```gherkin
+Feature: Autenticación de Usuario
+  Como cliente
+  Quiero iniciar sesión en mi cuenta
+  Para poder acceder a mi información personal e historial de pedidos
+
+  Scenario: Login exitoso con credenciales válidas
+    Given estoy en la página de login
+    When ingreso mi email y contraseña válidos
+    And hago clic en el botón de login
+    Then debería ser redirigido a mi dashboard
+    And debería ver un mensaje de bienvenida
+
+  Scenario: Login fallido con credenciales inválidas
+    Given estoy en la página de login
+    When ingreso un email o contraseña inválidos
+    And hago clic en el botón de login
+    Then debería ver un mensaje de error
+    And debería permanecer en la página de login
+```
+
+## Ejemplo 2: Carrito de Compras
+
+```gherkin
+Feature: Gestión de Carrito de Compras
+  Como cliente
+  Quiero gestionar artículos en mi carrito de compras
+  Para poder comprar los productos que deseo
+
+  Scenario: Agregar artículo a carrito vacío
+    Given mi carrito de compras está vacío
+    When agrego un producto al carrito
+    Then el carrito debería contener 1 artículo
+    And el total del carrito debería reflejar el precio del producto
+
+  Scenario: Remover artículo del carrito
+    Given mi carrito contiene 2 artículos
+    When remuevo 1 artículo del carrito
+    Then el carrito debería contener 1 artículo
+    And el total del carrito debería actualizarse en consecuencia
 ```
 
 ## Benefits of Gherkin Format
