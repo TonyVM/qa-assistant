@@ -217,7 +217,7 @@ secrets.json
 
 # Streamlit specific
 .streamlit/secrets.toml
-.streamlit/config.toml
+# .streamlit/config.toml  # Commented out for deployment
 
 # Local development files
 test_documents/
