@@ -2,6 +2,10 @@
 
 An intelligent web application built with Streamlit that uses **LangChain** and AI (OpenAI GPT and Google Gemini) to automatically generate testing artifacts from PDF requirement documents.
 
+## 🌐 Live Demo
+
+**🚀 Try it now:** [https://smart-tester.streamlit.app/](https://smart-tester.streamlit.app/)
+
 ## 🚀 Features
 
 - 📄 **PDF Document Upload**: Upload requirement documents in PDF format
@@ -26,6 +30,10 @@ An intelligent web application built with Streamlit that uses **LangChain** and 
 # 🧵 QA Assistant (Español)
 
 Una aplicación web inteligente desarrollada con Streamlit que utiliza **LangChain** e IA (OpenAI GPT y Google Gemini) para generar automáticamente artefactos de testing a partir de documentos de requerimientos en formato PDF.
+
+## 🌐 Demo en Vivo
+
+**🚀 Pruébalo ahora:** [https://smart-tester.streamlit.app/](https://smart-tester.streamlit.app/)
 
 ## 🚀 Características
 
