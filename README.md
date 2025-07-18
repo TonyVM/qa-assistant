@@ -1,4 +1,4 @@
-# 🧵 QA Test Case Assistant
+# 🧵 QA Assistant
 
 An intelligent web application built with Streamlit that uses **LangChain** and AI (OpenAI GPT and Google Gemini) to automatically generate testing artifacts from PDF requirement documents.
 
@@ -23,7 +23,7 @@ An intelligent web application built with Streamlit that uses **LangChain** and 
 
 ---
 
-# 🧵 QA Test Case Assistant (Español)
+# 🧵 QA Assistant (Español)
 
 Una aplicación web inteligente desarrollada con Streamlit que utiliza **LangChain** e IA (OpenAI GPT y Google Gemini) para generar automáticamente artefactos de testing a partir de documentos de requerimientos en formato PDF.
 
@@ -531,7 +531,7 @@ Developed with ❤️ to facilitate the work of QA teams.
 
 ---
 
-# 🧵 QA Test Case Assistant (Versión en Español)
+# 🧵 QA Assistant (Versión en Español)
 
 Una aplicación web inteligente desarrollada con Streamlit que utiliza IA (OpenAI GPT y Google Gemini) para generar automáticamente artefactos de testing a partir de documentos de requerimientos en formato PDF.
 

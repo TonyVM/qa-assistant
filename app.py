@@ -4,7 +4,7 @@ from generator import generate_test_artifacts, get_available_models
 from utils import save_to_csv
 
 st.set_page_config(page_title="QA Assistant v1.2.0-beta", layout="centered")
-st.title("🧵 QA Test Case Assistant")
+st.title("🧵 QA Assistant")
 st.caption("Version 1.2.0-beta - Multi-Model + Gherkin BDD Support")
 
 # Sidebar para configuraciones del modelo
