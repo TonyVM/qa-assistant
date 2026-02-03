@@ -118,99 +118,227 @@ qa_assistant_app/
 └── README.md            # Este archivo
 ```
 
-## 🛠️ Installation
+## 🛠️ Installation and Local Setup
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- **Python 3.8 or higher** installed on your system
+  - To check your Python version: `python --version` or `python3 --version`
+  - Download Python from [python.org](https://www.python.org/downloads/) if needed
+- **Git** installed (to clone the repository)
+  - Download from [git-scm.com](https://git-scm.com/downloads)
 - **An account with at least one of these providers:**
   - [OpenAI Platform](https://platform.openai.com/) (for GPT models)
   - [Google AI Studio](https://aistudio.google.com/) (for Gemini models)
 
-### Installation Steps
+### Step-by-Step Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd qa_assistant_app
-   ```
+#### 1. Download the Code
 
-2. **Create a virtual environment (recommended):**
+Open a terminal/command prompt and run:
 
-   **On macOS/Linux:**
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   ```
+```bash
+git clone https://github.com/TonyVM/qa-assistant.git
+cd qa-assistant
+```
 
-   **On Windows (PowerShell):**
-   ```powershell
-   python -m venv .venv
-   .venv\Scripts\Activate.ps1
-   ```
+Alternatively, download the code as ZIP:
+- Click the green "Code" button on [GitHub](https://github.com/TonyVM/qa-assistant)
+- Select "Download ZIP"
+- Extract the ZIP file
+- Navigate to the extracted folder in your terminal
 
-   **On Windows (Command Prompt):**
-   ```cmd
-   python -m venv .venv
-   .venv\Scripts\activate.bat
-   ```
+#### 2. Create a Virtual Environment (Recommended)
 
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+A virtual environment keeps your project dependencies isolated.
 
-4. **Ready to use!** 
-   
-   API keys are configured directly in the application interface with included tutorials.
+**On macOS/Linux:**
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+**On Windows (PowerShell):**
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+**On Windows (Command Prompt):**
+```cmd
+python -m venv .venv
+.venv\Scripts\activate.bat
+```
+
+You should see `(.venv)` at the beginning of your terminal prompt.
+
+#### 3. Install Dependencies
+
+With the virtual environment activated, install all required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+This will install:
+- Streamlit (web interface)
+- LangChain (AI framework)
+- OpenAI and Google libraries
+- PDF processing libraries
+- And other dependencies
+
+#### 4. Run the Application
+
+Start the Streamlit server:
+
+```bash
+streamlit run app.py
+```
+
+The application will automatically open in your default browser at `http://localhost:8501`
+
+If it doesn't open automatically, manually navigate to: **http://localhost:8501**
+
+#### 5. Configure Your API Key
+
+Once the app is running:
+1. Look at the sidebar on the left
+2. Select your AI provider (OpenAI or Google Gemini)
+3. Click on "📚 How to get [Provider] API Key" for step-by-step instructions
+4. Paste your API key in the input field
+5. Select the model you want to use
+
+**🎉 You're ready to start generating testing artifacts!**
+
+### Troubleshooting
+
+**Issue: `python` command not found**
+- Try using `python3` instead
+- Ensure Python is added to your system PATH
+
+**Issue: Permission denied when activating virtual environment on Windows**
+- Run PowerShell as Administrator
+- Execute: `Set-ExecutionPolicy RemoteSigned`
+
+**Issue: Port 8501 already in use**
+- Stop other Streamlit instances
+- Or use a different port: `streamlit run app.py --server.port 8502`
+
+**Issue: Missing dependencies**
+- Ensure you activated the virtual environment
+- Run `pip install -r requirements.txt` again
 
 ---
 
-## 🛠️ Instalación
+## 🛠️ Instalación y Configuración Local
 
 ### Prerrequisitos
 
-- Python 3.8 o superior
+- **Python 3.8 o superior** instalado en tu sistema
+  - Para verificar tu versión de Python: `python --version` o `python3 --version`
+  - Descarga Python desde [python.org](https://www.python.org/downloads/) si es necesario
+- **Git** instalado (para clonar el repositorio)
+  - Descarga desde [git-scm.com](https://git-scm.com/downloads)
 - **Una cuenta en al menos uno de estos proveedores:**
   - [OpenAI Platform](https://platform.openai.com/) (para modelos GPT)
   - [Google AI Studio](https://aistudio.google.com/) (para modelos Gemini)
 
-### Pasos de instalación
+### Pasos de Instalación Detallados
 
-1. **Clona el repositorio:**
-   ```bash
-   git clone <url-del-repositorio>
-   cd qa_assistant_app
-   ```
+#### 1. Descargar el Código
 
-2. **Crea un entorno virtual (recomendado):**
+Abre una terminal/símbolo del sistema y ejecuta:
 
-   **En macOS/Linux:**
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   ```
+```bash
+git clone https://github.com/TonyVM/qa-assistant.git
+cd qa-assistant
+```
 
-   **En Windows (PowerShell):**
-   ```powershell
-   python -m venv .venv
-   .venv\Scripts\Activate.ps1
-   ```
+Alternativamente, descarga el código como ZIP:
+- Haz clic en el botón verde "Code" en [GitHub](https://github.com/TonyVM/qa-assistant)
+- Selecciona "Download ZIP"
+- Extrae el archivo ZIP
+- Navega a la carpeta extraída en tu terminal
 
-   **En Windows (Command Prompt):**
-   ```cmd
-   python -m venv .venv
-   .venv\Scripts\activate.bat
-   ```
+#### 2. Crear un Entorno Virtual (Recomendado)
 
-3. **Instala las dependencias:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+Un entorno virtual mantiene las dependencias de tu proyecto aisladas.
 
-4. **¡Listo para usar!** 
-   
-   Las API keys se configuran directamente en la interfaz de la aplicación con tutoriales incluidos.
+**En macOS/Linux:**
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+**En Windows (PowerShell):**
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+**En Windows (Command Prompt):**
+```cmd
+python -m venv .venv
+.venv\Scripts\activate.bat
+```
+
+Deberías ver `(.venv)` al inicio de tu prompt de terminal.
+
+#### 3. Instalar Dependencias
+
+Con el entorno virtual activado, instala todos los paquetes requeridos:
+
+```bash
+pip install -r requirements.txt
+```
+
+Esto instalará:
+- Streamlit (interfaz web)
+- LangChain (framework de IA)
+- Bibliotecas de OpenAI y Google
+- Bibliotecas de procesamiento de PDF
+- Y otras dependencias
+
+#### 4. Ejecutar la Aplicación
+
+Inicia el servidor de Streamlit:
+
+```bash
+streamlit run app.py
+```
+
+La aplicación se abrirá automáticamente en tu navegador predeterminado en `http://localhost:8501`
+
+Si no se abre automáticamente, navega manualmente a: **http://localhost:8501**
+
+#### 5. Configurar tu API Key
+
+Una vez que la aplicación esté ejecutándose:
+1. Mira la barra lateral a la izquierda
+2. Selecciona tu proveedor de IA (OpenAI o Google Gemini)
+3. Haz clic en "📚 How to get [Provider] API Key" para ver las instrucciones paso a paso
+4. Pega tu API key en el campo de entrada
+5. Selecciona el modelo que deseas usar
+
+**🎉 ¡Estás listo para comenzar a generar artefactos de testing!**
+
+### Solución de Problemas
+
+**Problema: comando `python` no encontrado**
+- Intenta usar `python3` en su lugar
+- Asegúrate de que Python esté agregado al PATH de tu sistema
+
+**Problema: Permiso denegado al activar el entorno virtual en Windows**
+- Ejecuta PowerShell como Administrador
+- Ejecuta: `Set-ExecutionPolicy RemoteSigned`
+
+**Problema: Puerto 8501 ya en uso**
+- Detén otras instancias de Streamlit
+- O usa un puerto diferente: `streamlit run app.py --server.port 8502`
+
+**Problema: Dependencias faltantes**
+- Asegúrate de haber activado el entorno virtual
+- Ejecuta `pip install -r requirements.txt` nuevamente
 
 ## 🚀 Usage
 
